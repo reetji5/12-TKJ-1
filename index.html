@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun 🎂</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* ================= HALAMAN 1 ================= */
+
+        .halaman1 {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffb6d9, #ff69b4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .halaman1 h1 {
+            color: white;
+            font-size: clamp(28px, 7vw, 55px);
+            text-shadow: 2px 3px 8px #b83280;
+            margin-bottom: 10px;
+        }
+
+        .untuk {
+            color: white;
+            font-size: clamp(18px, 4vw, 25px);
+            margin-bottom: 25px;
+        }
+
+        .kado {
+            font-size: 110px;
+            cursor: pointer;
+            animation: goyang 1.5s infinite;
+            user-select: none;
+        }
+
+        .tekan {
+            margin-top: 15px;
+            color: white;
+            font-size: 18px;
+            animation: kedip 1s infinite;
+        }
+
+        @keyframes goyang {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-8deg);
+            }
+            75% {
+                transform: rotate(8deg);
+            }
+        }
+
+        @keyframes kedip {
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        /* ================= HALAMAN 2 ================= */
+
+        .halaman2 {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(#ffb6d9, #fff0f7);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .halaman2 h1 {
+            color: #e91e63;
+            font-size: clamp(30px, 8vw, 55px);
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px white;
+        }
+
+        .ucapan {
+            max-width: 700px;
+            margin: 20px auto;
+            color: #9c2757;
+            font-size: clamp(17px, 4vw, 23px);
+            line-height: 1.6;
+            background: rgba(255,255,255,0.65);
+            padding: 18px;
+            border-radius: 20px;
+        }
+
+        /* Coklat */
+
+        .coklat-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .coklat {
+            font-size: 65px;
+            animation: melayang 2s ease-in-out infinite;
+        }
+
+        .coklat:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .coklat:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes melayang {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* Bintang dan Love */
+
+        .jatuh {
+            position: fixed;
+            top: -50px;
+            pointer-events: none;
+            animation: turun linear forwards;
+            z-index: 10;
+        }
+
+        @keyframes turun {
+            from {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0.2;
+            }
+        }
+
+        /* HP */
+
+        @media (max-width: 600px) {
+            .kado {
+                font-size: 85px;
+            }
+
+            .coklat {
+                font-size: 55px;
+            }
+
+            .ucapan {
+                margin: 15px 5px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HALAMAN 1 ================= -->
+
+    <section class="halaman1" id="halaman1">
+
+        <h1>🎉 Selamat Ulang Tahun 🎂</h1>
+
+        <div class="untuk">
+            💖 Untuk Kamu / Untuk Semua Orang 💖
+        </div>
+
+        <div class="kado" onclick="bukaKado()">
+            🎁
+        </div>
+
+        <div class="tekan">
+            ✨ Tekan kadonya ✨
+        </div>
+
+    </section>
+
+
+    <!-- ================= HALAMAN 2 ================= -->
+
+    <section class="halaman2" id="halaman2">
+
+        <h1>🎂 Selamat Ulang Tahun! 🎉</h1>
+
+        <div class="ucapan">
+            Semoga di hari ulang tahunmu ini,
+            semua harapan dan impianmu bisa tercapai. 💖
+            <br><br>
+
+            Semoga selalu diberikan kebahagiaan,
+            kesehatan, keberuntungan,
+            dan banyak momen indah setiap harinya. ✨
+            <br><br>
+
+            Tetap menjadi diri sendiri dan terus tersenyum! 🥳💐
+            <br><br>
+
+            <b>Selamat ulang tahun! 🎂🎈💖</b>
+        </div>
+
+        <div class="coklat-container">
+            <div class="coklat">🍫</div>
+            <div class="coklat">🍫</div>
+            <div class="coklat">🍫</div>
+        </div>
+
+    </section>
+
+
+    <script>
+
+        function bukaKado() {
+
+            // Sembunyikan halaman pertama
+            document.getElementById("halaman1").style.display = "none";
+
+            // Tampilkan halaman kedua
+            document.getElementById("halaman2").style.display = "block";
+
+            // Mulai animasi
+            mulaiHujan();
+
+        }
+
+
+        function mulaiHujan() {
+
+            setInterval(function() {
+
+                const benda = document.createElement("div");
+
+                // Lebih banyak bintang daripada love
+                const pilihan = Math.random();
+
+                if (pilihan < 0.7) {
+                    benda.innerHTML = "⭐";
+                } else {
+                    benda.innerHTML = "💖";
+                }
+
+                benda.classList.add("jatuh");
+
+                benda.style.left = Math.random() * 100 + "vw";
+
+                benda.style.fontSize =
+                    (Math.random() * 18 + 12) + "px";
+
+                benda.style.animationDuration =
+                    (Math.random() * 4 + 4) + "s";
+
+                document.body.appendChild(benda);
+
+                setTimeout(function() {
+                    benda.remove();
+                }, 9000);
+
+            }, 300);
+
+        }
+
+    </script>
+
+</body>
+</html>
+```
